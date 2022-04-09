@@ -15,11 +15,16 @@ New/This/Pointers/References conclusion
  */
 
 
-
-
-
-
-
+struct A {};
+struct HeapA
+{
+    A* ptrA;
+    HeapA() : ptrA(new A()){}
+    ~HeapA()
+    {
+        delete ptrA;
+    }
+};
 
 
 
