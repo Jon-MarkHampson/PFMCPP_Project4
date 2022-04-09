@@ -182,10 +182,16 @@ int main()
 
  Wait for my code review.
  */
-#include <iostream>
+
 
 struct FloatType
 {
+    float* value;
+    FloatType( float val ) : value( new float(val) ){}
+    ~FloatType()
+    {
+        delete value;
+    }
     float add( float lhs, float rhs );
     float subtract( float lhs, float rhs );
     float multiply( float lhs, float rhs );
@@ -207,6 +213,12 @@ float FloatType::divide( float lhs, float rhs )
 
 struct DoubleType
 {
+    double* value;
+    DoubleType( double val ) : value( new double(val) ){}
+    ~DoubleType()
+    {
+        delete value;
+    }
     double add( double lhs, double rhs );
     double subtract( double lhs, double rhs );
     double multiply( double lhs, double rhs );
@@ -226,6 +238,12 @@ double DoubleType::divide(double lhs, double rhs)
 }
 struct IntType
 {
+    int* value;
+    IntType( int val ) : value( new int(val) ){}
+    ~IntType()
+    {
+        delete value;
+    }
     int add( int lhs, int rhs );
     int subtract( int lhs, int rhs );
     int multiply( int lhs, int rhs );
