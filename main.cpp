@@ -225,7 +225,7 @@ FloatType& FloatType::multiply( float valueToMultiply )
 }
 FloatType& FloatType::divide( float valueOfDenom )
 {
-	if ( valueOfDenom == 0.0 )
+	if ( valueOfDenom == 0.0f )
 		std::cout << "warning: floating point division by zero!" << std::endl;
 		*value /= valueOfDenom;
 		return *this;
@@ -270,7 +270,7 @@ DoubleType& DoubleType::divide( double valueOfDenom )
 		return *this;
 }
 
-DoubleType& DoubleType::add( const FloatType& ft ){ return add *ft.value ); }
+DoubleType& DoubleType::add( const FloatType& ft ){ return add( *ft.value ); }
 DoubleType& DoubleType::subtract( const FloatType& ft ){ return subtract( *ft.value ); }
 DoubleType& DoubleType::multiply( const FloatType& ft ){ return multiply( *ft.value ); }
 DoubleType& DoubleType::divide( const FloatType& ft ){ return divide( *ft.value ); }
@@ -278,7 +278,7 @@ DoubleType& DoubleType::divide( const FloatType& ft ){ return divide( *ft.value 
 DoubleType& DoubleType::add( const DoubleType& dt ){ return add(*dt.value); }
 DoubleType& DoubleType::subtract( const DoubleType& dt ){ return subtract( *dt.value ); }
 DoubleType& DoubleType::multiply( const DoubleType& dt ){ return multiply( *dt.value ); }
-DoubleType& DoubleType::divide( const DoubleType& dt ){ return divide( *dt.value ); };
+DoubleType& DoubleType::divide( const DoubleType& dt ){ return divide( *dt.value ); }
 
 DoubleType& DoubleType::add( const IntType& it ){ return add( *it.value ); }
 DoubleType& DoubleType::subtract( const IntType& it ){ return subtract( *it.value ); }
