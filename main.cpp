@@ -227,9 +227,11 @@ FloatType& FloatType::multiply( float valueToMultiply )
 FloatType& FloatType::divide( float valueOfDenom )
 {
     if ( valueOfDenom == 0.0f )
+    {
         std::cout << "warning: floating point division by zero!" << std::endl;
-        *value /= valueOfDenom;
-        return *this;
+    }   
+    *value /= valueOfDenom;
+    return *this;
 }
 
 FloatType& FloatType::add( const FloatType& ft ){ return add( *ft.value ); }
@@ -266,9 +268,11 @@ DoubleType& DoubleType::multiply( double valueToMultiply )
 DoubleType& DoubleType::divide( double valueOfDenom )
 {
     if ( valueOfDenom == 0.0 )
+    {
         std::cout << "warning: floating point division by zero!" << std::endl;
-        *value /= valueOfDenom;
-        return *this;
+    }    
+    *value /= valueOfDenom;
+    return *this;
 }
 
 DoubleType& DoubleType::add( const FloatType& ft ){ return add( *ft.value ); }
